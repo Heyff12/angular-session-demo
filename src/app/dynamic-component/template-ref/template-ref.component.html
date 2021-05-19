@@ -1,1 +1,12 @@
-<p>template-ref works!</p>
+
+<div #elementRef></div>
+
+<ng-template #templateRef let-options="data">
+  <div *ngFor="let option of options">{{option.label}}</div>
+</ng-template>
+
+<!--pass TemplateRef type as input-->
+<app-template-ref-child [title]="templateRef"></app-template-ref-child>
+
+<!--pass string type as input-->
+<app-template-ref-child [title]="'我是模版参数 传递的string类型'"></app-template-ref-child>
