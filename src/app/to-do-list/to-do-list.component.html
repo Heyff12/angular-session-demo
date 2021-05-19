@@ -1,0 +1,62 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" class="cards">
+  <div fxLayout="row" fxLayoutAlign="center">
+    <div fxFlex="90%" fxFlex.md="66.6667%" fxFlex.gt-md="50%">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><h2>Add To Do</h2></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field>
+            <input matInput [formControl]="task" />
+          </mat-form-field>
+          <div fxLayout="row" fxLayoutAlign="end">
+            <button mat-button color="primary" (click)="addToDo()">
+              Add To Do
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title
+            ><h2
+              [matBadge]="incompleteToDos.length"
+              [matBadgeHidden]="incompleteToDos.length === 0"
+              matBadgeOverlap="false"
+            >
+              To Do List
+            </h2></mat-card-title
+          >
+        </mat-card-header>
+        <mat-card-content>
+          <ng-container *ngIf="incompleteToDos; let toDos">
+            <ng-container *ngIf="toDos.length > 0; else allDone">
+              <app-list
+                [toDos]="toDos"
+                (toDoChange)="onCompleteToDo($event)"
+              ></app-list>
+            </ng-container>
+            <ng-template #allDone>
+              <div fxLayout="row" fxLayoutAlign="center center">
+                <h4>All Tasks Are Done 🏖</h4>
+              </div>
+            </ng-template>
+          </ng-container>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><h2>Completed 🎉</h2></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-list
+            [toDos]="completeToDos"
+            (toDoChange)="onIncompleteToDo($event)"
+          ></app-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

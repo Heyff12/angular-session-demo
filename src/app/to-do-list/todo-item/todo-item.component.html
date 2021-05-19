@@ -1,0 +1,10 @@
+<div fxLayoutAlign="space-between center">
+  <mat-list-item [ngClass]="toDo.complete && 'complete'">
+    <mat-checkbox
+      [checked]="toDo.complete"
+      (change)="this.completeChange.emit($event)"
+      >{{ toDo.task | isEmpty: 2 }}
+    </mat-checkbox>
+  </mat-list-item>
+  <span class="sub-content">Created at {{ toDo.id | date: 'medium' }}</span>
+</div>
