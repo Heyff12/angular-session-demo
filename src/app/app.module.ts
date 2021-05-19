@@ -9,6 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToDoListModule } from './to-do-list/to-do-list.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ModuleAModule } from './module-a/module-a.module';
+import { ServiceBService } from './module-a/services/service-b.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +24,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToDoListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ModuleAModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [],
+  providers: [
+    ServiceBService,
+  ],
+  entryComponents: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
