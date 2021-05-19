@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToDoListModule } from './to-do-list/to-do-list.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToDoListModule
+    ToDoListModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewChecked, Component, DoCheck, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ToDo } from './type';
 
@@ -7,7 +7,7 @@ import { ToDo } from './type';
   templateUrl: './to-do-list.component.html',
   styleUrls: ['./to-do-list.component.scss']
 })
-export class ToDoListComponent implements OnInit {
+export class ToDoListComponent implements OnInit, DoCheck, AfterContentInit, AfterViewChecked {
   completeToDos: ToDo[];
   incompleteToDos: ToDo[];
   task: FormControl = new FormControl();
@@ -21,6 +21,19 @@ export class ToDoListComponent implements OnInit {
         complete: false
       }
     ];
+    console.log('parent onInit');
+  }
+
+  ngDoCheck(): void {
+    console.log('parent doCheck');
+  }
+
+  ngAfterContentInit(): void {
+    console.log('parent contentChecked');
+  }
+
+  ngAfterViewChecked(): void {
+    console.log('parent viewChecked');
   }
 
   addToDo(): void {
