@@ -5,13 +5,15 @@ import { TemplateRefComponent } from './template-ref/template-ref.component';
 import { DynamicComponent } from './dynamic-component.component';
 import { CommonModule } from '@angular/common';
 import { TemplateRefChildComponent } from './template-ref/template-ref-child/template-ref-child.component';
+import { ViewContainerRefComponent } from './view-container-ref/view-container-ref.component';
 
 @NgModule({
     declarations: [
       ElementRefComponent,
       TemplateRefComponent,
       DynamicComponent,
-      TemplateRefChildComponent
+      TemplateRefChildComponent,
+      ViewContainerRefComponent
     ],
     imports: [DynamicComponentRouter, CommonModule],
   exports: [
