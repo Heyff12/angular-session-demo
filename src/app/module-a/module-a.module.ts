@@ -5,6 +5,7 @@ import { ComponentBComponent } from './components/component-b/component-b.compon
 import { IfEmptyPipe } from './pipes/if-empty.pipe';
 import { RouterModule } from '@angular/router';
 import { HighlightDirective } from './directives/highlight.directive';
+import { ModuleARoutingModule } from './module-a.router';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HighlightDirective } from './directives/highlight.directive';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ModuleARoutingModule
   ],
   providers: [
   ],

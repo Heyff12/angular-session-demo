@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: () => import('./dynamic-component/dynamic-component.module').then(m => m.DynamicComponentModule)
   },
   {
+    path: 'module-a',
+    loadChildren: () => import('./module-a/module-a.module').then(m => m.ModuleAModule)
+  },
+  {
     path: 'to-do-list',
     component: ToDoListComponent
   },
