@@ -1,5 +1,19 @@
 <div>
-  <div appHighlight>test</div>
-  <div>{{value | ifEmpty}}</div>
-  <button (click)="handleClick()">go to componentB</button>
+  <div class="section">
+    <div appHighlight>test</div>
+    <div>{{value | ifEmpty}}</div>
+    <button (click)="handleClick()">go to componentB</button>
+  </div>
+
+  <div class="section">
+    <div>服务非单例</div>
+    <app-random></app-random>
+    <app-random></app-random>
+  </div>
+
+  <div class="section">
+    <div>服务单例</div>
+    <span appHighlight>component1: </span><app-random-singleton></app-random-singleton>
+    <span appHighlight>component2: </span><app-random-singleton></app-random-singleton>
+  </div>
 </div>

@@ -6,13 +6,18 @@ import { IfEmptyPipe } from './pipes/if-empty.pipe';
 import { RouterModule } from '@angular/router';
 import { HighlightDirective } from './directives/highlight.directive';
 import { ModuleARoutingModule } from './module-a.router';
+import { RandomComponent } from './components/random/random.component';
+import { RandomSingletonComponent } from './components/random-singleton/random-singleton.component';
+import { RandomSingleton2Service } from './services/random-singleton2.service';
 
 @NgModule({
   declarations: [
     ComponentAComponent,
     ComponentBComponent,
     IfEmptyPipe,
-    HighlightDirective
+    HighlightDirective,
+    RandomComponent,
+    RandomSingletonComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +25,7 @@ import { ModuleARoutingModule } from './module-a.router';
     ModuleARoutingModule
   ],
   providers: [
+    RandomSingleton2Service,
   ],
   exports: [
     IfEmptyPipe,
