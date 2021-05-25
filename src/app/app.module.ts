@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToDoListModule } from './to-do-list/to-do-list.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ModuleAModule } from './module-a/module-a.module';
 import { ServiceBService } from './module-a/services/service-b.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
@@ -29,7 +28,6 @@ import { NgGroupComponent } from './ng-group/ng-group.component';
     BrowserAnimationsModule,
     ToDoListModule,
     FlexLayoutModule,
-    ModuleAModule,
     ReactiveFormsModule,
     FormsModule,
   ],

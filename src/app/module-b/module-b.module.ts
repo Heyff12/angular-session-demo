@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComponentCComponent } from './components/component-c/component-c.component';
-import { ModuleAModule } from '../module-a/module-a.module';
+import { ModuleBRoutingModule } from './module-b.router';
 
 
 
@@ -11,7 +11,7 @@ import { ModuleAModule } from '../module-a/module-a.module';
   ],
   imports: [
     CommonModule,
-    ModuleAModule
+    ModuleBRoutingModule
   ]
 })
 export class ModuleBModule { }

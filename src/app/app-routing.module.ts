@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./module-a/module-a.module').then(m => m.ModuleAModule)
   },
   {
+    path: 'module-b',
+    loadChildren: () => import('./module-b/module-b.module').then(m => m.ModuleBModule)
+  },
+  {
     path: 'to-do-list',
     component: ToDoListComponent
   },
