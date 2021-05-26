@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { FormModule } from './form/form.module';
 import { SharedModule } from './shared/shared.module';
+import { NgGroupComponent } from './ng-group/ng-group.component';
+import { NgFormBuilderComponent } from './ng-form-builder/ng-form-builder.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormComponent,
     HomePageComponent,
     TemplateDrivenFormComponent,
+    NgGroupComponent,
+    NgFormBuilderComponent
   ],
   imports: [
     BrowserModule,
