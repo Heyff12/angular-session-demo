@@ -12,6 +12,7 @@ import { RandomSingleton2Service } from './services/random-singleton2.service';
 import { ParentComponent } from './components/resolution-modifiers/parent/parent.component';
 import { ChildComponent } from './components/resolution-modifiers/child/child.component';
 import { OptionalComponent } from './components/resolution-modifiers/optional/optional.component';
+import { PreloadingModule } from '../preloading/preloading.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { OptionalComponent } from './components/resolution-modifiers/optional/op
   imports: [
     CommonModule,
     RouterModule,
-    ModuleARoutingModule
+    ModuleARoutingModule,
+    PreloadingModule
   ],
   providers: [
     RandomSingleton2Service,

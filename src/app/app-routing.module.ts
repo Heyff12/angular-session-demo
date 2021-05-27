@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { DynamicComponent } from './dynamic-component/dynamic-component.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
+import { PreloadStrategyService } from './preloading/services/preload-strategy.service';
 
 const routes: Routes = [
   {
@@ -27,6 +28,11 @@ const routes: Routes = [
     loadChildren: () => import('./module-b/module-b.module').then(m => m.ModuleBModule)
   },
   {
+    path: 'preloading',
+    loadChildren: () => import('./preloading/preloading.module').then(m => m.PreloadingModule),
+    data: { preload: true }
+  },
+  {
     path: 'to-do-list',
     component: ToDoListComponent
   },
@@ -35,6 +41,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [DynamicComponent],
   imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot(routes, { preloadingStrategy:  PreloadAllModules })], // preloading all modules
+  // imports: [RouterModule.forRoot(routes, { preloadingStrategy:  PreloadStrategyService })], // preloading specific modules
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
