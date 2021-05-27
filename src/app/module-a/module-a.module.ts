@@ -9,6 +9,9 @@ import { ModuleARoutingModule } from './module-a.router';
 import { RandomComponent } from './components/random/random.component';
 import { RandomSingletonComponent } from './components/random-singleton/random-singleton.component';
 import { RandomSingleton2Service } from './services/random-singleton2.service';
+import { ParentComponent } from './components/resolution-modifiers/parent/parent.component';
+import { ChildComponent } from './components/resolution-modifiers/child/child.component';
+import { OptionalComponent } from './components/resolution-modifiers/optional/optional.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { RandomSingleton2Service } from './services/random-singleton2.service';
     IfEmptyPipe,
     HighlightDirective,
     RandomComponent,
-    RandomSingletonComponent
+    RandomSingletonComponent,
+    ParentComponent,
+    ChildComponent,
+    OptionalComponent
   ],
   imports: [
     CommonModule,
