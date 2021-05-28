@@ -1,0 +1,14 @@
+<p>
+  <label for="mobile">手机号：</label>
+  <input id="mobile" type="number" required [(ngModel)]="testModel" appMobile #mobile="ngModel">
+  <button (click)="consoleLog()">输出</button>
+</p>
+
+<div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)">
+  <div *ngIf="mobile.errors.errorMobile">
+    手机号格式不正确
+  </div>
+  <div *ngIf="mobile.errors.required">
+    手机号必填
+  </div>
+</div>
