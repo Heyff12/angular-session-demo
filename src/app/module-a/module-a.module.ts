@@ -15,6 +15,14 @@ import { OptionalComponent } from './components/resolution-modifiers/optional/op
 import { PreloadingModule } from '../preloading/preloading.module';
 import { ParentBComponent } from './components/injector-hierarchy/parent-b/parent-b.component';
 import { ChildBComponent } from './components/injector-hierarchy/child-b/child-b.component';
+import { ResolutionModifierComponent } from './components/resolution-modifiers/resolution-modifier/resolution-modifier.component';
+import { ServiceRegistryComponent } from './components/service-registry/service-registry/service-registry.component';
+import { CreateDependencyContainerComponent } from './components/dependencies/create-dependency-container/create-dependency-container.component';
+import { UserService } from './services/user.service';
+import { environment } from '../../environments/environment';
+import { UserTestService } from './services/user-test.service';
+
+const userValue = { value: 'useValue' };
 
 @NgModule({
   declarations: [
@@ -28,7 +36,10 @@ import { ChildBComponent } from './components/injector-hierarchy/child-b/child-b
     ChildComponent,
     OptionalComponent,
     ParentBComponent,
-    ChildBComponent
+    ChildBComponent,
+    ResolutionModifierComponent,
+    ServiceRegistryComponent,
+    CreateDependencyContainerComponent
   ],
   imports: [
     CommonModule,
@@ -38,6 +49,16 @@ import { ChildBComponent } from './components/injector-hierarchy/child-b/child-b
   ],
   providers: [
     RandomSingleton2Service,
+    UserService,
+    // { provide: UserService, useClass: UserService },
+    // { provide: UserService, useClass: UserTestService },
+    // { provide: UserService, useValue: userValue },
+    // { provide: UserService, useFactory: () => {
+    //     console.log('useFactory');
+    //     return new UserTestService();
+    //   },
+    // },
+    // { provide: UserService, useExisting: UserTestService },
   ],
   exports: [
     IfEmptyPipe,
