@@ -13,6 +13,8 @@ import { ParentComponent } from './components/resolution-modifiers/parent/parent
 import { ChildComponent } from './components/resolution-modifiers/child/child.component';
 import { OptionalComponent } from './components/resolution-modifiers/optional/optional.component';
 import { PreloadingModule } from '../preloading/preloading.module';
+import { ParentBComponent } from './components/injector-hierarchy/parent-b/parent-b.component';
+import { ChildBComponent } from './components/injector-hierarchy/child-b/child-b.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { PreloadingModule } from '../preloading/preloading.module';
     RandomSingletonComponent,
     ParentComponent,
     ChildComponent,
-    OptionalComponent
+    OptionalComponent,
+    ParentBComponent,
+    ChildBComponent
   ],
   imports: [
     CommonModule,
