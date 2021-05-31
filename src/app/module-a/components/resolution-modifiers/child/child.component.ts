@@ -15,8 +15,9 @@ import { HostService } from '../../../services/host.service';
 export class ChildComponent implements OnInit {
 
   constructor(@Self() public selfService: SelfService,
-              @SkipSelf() public skipSelfService: SkipSelfService,
-              @Host() public hostService: HostService) { }
+              // @SkipSelf() public skipSelfService: SkipSelfService,
+              // @Host() public hostService: HostService
+  ) { }
 
   ngOnInit(): void {
   }

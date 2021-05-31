@@ -6,8 +6,8 @@ import { IfEmptyPipe } from './pipes/if-empty.pipe';
 import { RouterModule } from '@angular/router';
 import { HighlightDirective } from './directives/highlight.directive';
 import { ModuleARoutingModule } from './module-a.router';
-import { RandomComponent } from './components/random/random.component';
-import { RandomSingletonComponent } from './components/random-singleton/random-singleton.component';
+import { RandomComponent } from './components/service-registry/random/random.component';
+import { RandomSingletonComponent } from './components/service-registry/random-singleton/random-singleton.component';
 import { RandomSingleton2Service } from './services/random-singleton2.service';
 import { ParentComponent } from './components/resolution-modifiers/parent/parent.component';
 import { ChildComponent } from './components/resolution-modifiers/child/child.component';
@@ -22,6 +22,7 @@ import { UserService } from './services/user.service';
 import { UserTestService } from './services/user-test.service';
 import { SharedModule } from '../shared/shared.module';
 import { ForChildComponent } from './components/for-child/for-child/for-child.component';
+import { CreateInjectorComponent } from './components/create-injector/create-injector.component';
 
 const userValue = { value: 'useValue' };
 
@@ -41,7 +42,8 @@ const userValue = { value: 'useValue' };
     ResolutionModifierComponent,
     ServiceRegistryComponent,
     CreateDependencyContainerComponent,
-    ForChildComponent
+    ForChildComponent,
+    CreateInjectorComponent
   ],
   imports: [
     CommonModule,
@@ -54,10 +56,10 @@ const userValue = { value: 'useValue' };
     RandomSingleton2Service,
     UserService,
     // { provide: UserService, useClass: UserService },
-    // { provide: UserService, useClass: UserTestService },
+    { provide: UserService, useClass: UserTestService },
     // { provide: UserService, useValue: userValue },
     // { provide: UserService, useFactory: () => {
-    //     console.log('useFactory');
+    //     console.log('---useFactory---');
     //     return new UserTestService();
     //   },
     // },

@@ -11,5 +11,6 @@ export class OptionalComponent implements OnInit {
   constructor(@Optional() private optionalService: OptionalService) { }
 
   ngOnInit(): void {
+    console.log('OptionalService', this.optionalService);
   }
 }

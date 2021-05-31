@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RandomSingletonService } from '../../services/random-singleton.service';
-import { RandomSingleton2Service } from '../../services/random-singleton2.service';
+import { RandomSingletonService } from '../../../services/random-singleton.service';
+import { RandomSingleton2Service } from '../../../services/random-singleton2.service';
 
 @Component({
   selector: 'app-random-singleton',

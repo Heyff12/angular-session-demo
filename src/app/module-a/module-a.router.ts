@@ -7,6 +7,7 @@ import { ResolutionModifierComponent } from './components/resolution-modifiers/r
 import { ServiceRegistryComponent } from './components/service-registry/service-registry/service-registry.component';
 import { CreateDependencyContainerComponent } from './components/dependencies/create-dependency-container/create-dependency-container.component';
 import { ForChildComponent } from './components/for-child/for-child/for-child.component';
+import { CreateInjectorComponent } from './components/create-injector/create-injector.component';
 
 const ROUTES = [
   {
@@ -23,20 +24,24 @@ const ROUTES = [
     component: ComponentBComponent,
   },
   {
-    path: 'resolution-modifiers',
-    component: ResolutionModifierComponent,
-  },
-  {
-    path: 'injector-hierarchy',
-    component: ParentBComponent,
-  },
-  {
     path: 'service-registry',
     component: ServiceRegistryComponent,
   },
   {
     path: 'dependency-creation',
     component: CreateDependencyContainerComponent,
+  },
+  {
+    path: 'injector-hierarchy',
+    component: ParentBComponent,
+  },
+  {
+    path: 'resolution-modifiers',
+    component: ResolutionModifierComponent,
+  },
+  {
+    path: 'create-injector',
+    component: CreateInjectorComponent,
   },
   {
     path: 'for-child',
