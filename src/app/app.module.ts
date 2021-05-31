@@ -12,6 +12,7 @@ import { ServiceBService } from './module-a/services/service-b.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { FormModule } from './form/form.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormModule } from './form/form.module';
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
+    SharedModule.forRoot()
     FormModule
   ],
   exports: [],

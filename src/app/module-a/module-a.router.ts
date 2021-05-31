@@ -6,6 +6,7 @@ import { ParentBComponent } from './components/injector-hierarchy/parent-b/paren
 import { ResolutionModifierComponent } from './components/resolution-modifiers/resolution-modifier/resolution-modifier.component';
 import { ServiceRegistryComponent } from './components/service-registry/service-registry/service-registry.component';
 import { CreateDependencyContainerComponent } from './components/dependencies/create-dependency-container/create-dependency-container.component';
+import { ForChildComponent } from './components/for-child/for-child/for-child.component';
 
 const ROUTES = [
   {
@@ -36,6 +37,10 @@ const ROUTES = [
   {
     path: 'dependency-creation',
     component: CreateDependencyContainerComponent,
+  },
+  {
+    path: 'for-child',
+    component: ForChildComponent,
   },
 ];
 

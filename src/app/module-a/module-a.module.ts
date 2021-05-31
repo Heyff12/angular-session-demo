@@ -19,8 +19,9 @@ import { ResolutionModifierComponent } from './components/resolution-modifiers/r
 import { ServiceRegistryComponent } from './components/service-registry/service-registry/service-registry.component';
 import { CreateDependencyContainerComponent } from './components/dependencies/create-dependency-container/create-dependency-container.component';
 import { UserService } from './services/user.service';
-import { environment } from '../../environments/environment';
 import { UserTestService } from './services/user-test.service';
+import { SharedModule } from '../shared/shared.module';
+import { ForChildComponent } from './components/for-child/for-child/for-child.component';
 
 const userValue = { value: 'useValue' };
 
@@ -39,13 +40,15 @@ const userValue = { value: 'useValue' };
     ChildBComponent,
     ResolutionModifierComponent,
     ServiceRegistryComponent,
-    CreateDependencyContainerComponent
+    CreateDependencyContainerComponent,
+    ForChildComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     ModuleARoutingModule,
-    PreloadingModule
+    PreloadingModule,
+    SharedModule.forChild(),
   ],
   providers: [
     RandomSingleton2Service,

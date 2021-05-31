@@ -12,14 +12,14 @@ export class ComponentAComponent implements OnInit {
   value = '';
   withoutDIService: WithoutDIService;
 
-  constructor(private serviceB: ServiceBService,
+  constructor(public serviceB: ServiceBService,
               private router: Router,
               private withDIService: WithDIService) {
     this.withoutDIService = new WithoutDIService();
   }
 
   ngOnInit(): void {
-    this.value = this.serviceB.getData();
+    // this.value = this.serviceB.getData();
     console.log('withoutDIService', this.withoutDIService.getData());
     console.log('withDIService', this.withDIService.getData());
   }
