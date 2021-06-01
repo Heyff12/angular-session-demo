@@ -36,6 +36,10 @@ const routes: Routes = [
     path: 'to-do-list',
     component: ToDoListComponent
   },
+  {
+    path: 'form',
+    loadChildren: () => import('./form/form.module').then(m => m.FormModule)
+  },
 ];
 
 @NgModule({

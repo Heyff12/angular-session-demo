@@ -11,7 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ServiceBService } from './module-a/services/service-b.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
-import { NgGroupComponent } from './ng-group/ng-group.component';
+import { FormModule } from './form/form.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,6 @@ import { NgGroupComponent } from './ng-group/ng-group.component';
     ReactiveFormComponent,
     HomePageComponent,
     TemplateDrivenFormComponent,
-    NgGroupComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +29,7 @@ import { NgGroupComponent } from './ng-group/ng-group.component';
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
+    FormModule
   ],
   exports: [],
   providers: [
