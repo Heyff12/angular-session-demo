@@ -1,7 +1,22 @@
 <div class="section">
+<!--  @optional-->
   <app-optional></app-optional>
+  <br>
+
+<!--  @Self and @SkipSelf-->
   <app-parent></app-parent>
-<!--  <app-parent><app-child></app-child></app-parent>-->
+  <br>
+
+<!--  @Host directive -->
+  @Host directive
+  <app-host></app-host>
+  <br>
+
+<!--  @Host ng-content-->
+<!--  @Host ng-content -->
+<!--  <app-host><app-host-child></app-host-child></app-host>-->
+
+
   <div>
     <a [routerLink]="['/module-a/component-a']">go home</a>
   </div>

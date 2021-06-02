@@ -9,14 +9,15 @@ import { HostService } from '../../../services/host.service';
   styleUrls: ['./child.component.scss'],
   providers: [
     { provide: SelfService, useValue: { value: 'child selfService' }},
-    { provide: SkipSelfService, useValue: { value: 'child skipSelfService' }}
+    { provide: SkipSelfService, useValue: { value: 'child skipSelfService' }},
+    { provide: HostService, useValue: { value: 'child hostService' }},
     ]
 })
 export class ChildComponent implements OnInit {
 
   constructor(@Self() public selfService: SelfService,
-              // @SkipSelf() public skipSelfService: SkipSelfService,
-              // @Host() public hostService: HostService
+              @SkipSelf() public skipSelfService: SkipSelfService,
+              @Host() public hostService: HostService
   ) { }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComponentAComponent } from './components/component-a/component-a.component';
 import { ComponentBComponent } from './components/component-b/component-b.component';
@@ -23,8 +23,11 @@ import { UserTestService } from './services/user-test.service';
 import { SharedModule } from '../shared/shared.module';
 import { ForChildComponent } from './components/for-child/for-child/for-child.component';
 import { CreateInjectorComponent } from './components/create-injector/create-injector.component';
+import { HostComponent } from './components/resolution-modifiers/host/host.component';
+import { HostChildComponent } from './components/resolution-modifiers/host-child/host-child.component';
 
 const userValue = { value: 'useValue' };
+export const API_URL = new InjectionToken('');
 
 @NgModule({
   declarations: [
@@ -43,7 +46,9 @@ const userValue = { value: 'useValue' };
     ServiceRegistryComponent,
     CreateDependencyContainerComponent,
     ForChildComponent,
-    CreateInjectorComponent
+    CreateInjectorComponent,
+    HostComponent,
+    HostChildComponent
   ],
   imports: [
     CommonModule,
@@ -54,9 +59,11 @@ const userValue = { value: 'useValue' };
   ],
   providers: [
     RandomSingleton2Service,
-    UserService,
+    // UserService,
     // { provide: UserService, useClass: UserService },
     { provide: UserService, useClass: UserTestService },
+    { provide: 'test', useValue: 'test useValue'},
+    { provide: API_URL, useValue: 'http:xxx.com'},
     // { provide: UserService, useValue: userValue },
     // { provide: UserService, useFactory: () => {
     //     console.log('---useFactory---');
