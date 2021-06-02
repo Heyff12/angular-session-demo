@@ -27,7 +27,7 @@ import { HostComponent } from './components/resolution-modifiers/host/host.compo
 import { HostChildComponent } from './components/resolution-modifiers/host-child/host-child.component';
 
 const userValue = { value: 'useValue' };
-export const API_URL = new InjectionToken('');
+export const API_URL = new InjectionToken('apiUrl');
 
 @NgModule({
   declarations: [
@@ -59,7 +59,7 @@ export const API_URL = new InjectionToken('');
   ],
   providers: [
     RandomSingleton2Service,
-    // UserService,
+    UserService,
     // { provide: UserService, useClass: UserService },
     { provide: UserService, useClass: UserTestService },
     { provide: 'test', useValue: 'test useValue'},
