@@ -30,7 +30,7 @@ import { SharedModule } from './shared/shared.module';
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
     FormModule
   ],
   exports: [],
