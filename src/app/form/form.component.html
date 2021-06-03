@@ -1,19 +1,22 @@
 <section>
   <h2>Links</h2>
-  <div fxLayout="column" fxLayoutGap="10px">
-    <a routerLink="/group">表单</a>
-    <a routerLink="/item">组件</a>
-  </div>
+  <ul>
+    <li><a routerLink="/form/group">ng-group</a></li>
+    <li><a routerLink="/form/item">自定义组件</a></li>
+    <li><a routerLink="/form/dynamic">动态组件</a></li>
+  </ul>
 
+<h2>自适应表单</h2>
+  Favorite Color: <input type="text" class="zishiying" [formControl]="favoriteColorControl">
+  <p>{{favoriteColorControl.value}}</p>
+<h2>模板表单</h2>
+  Favorite Color: <input type="text" class="muban" [(ngModel)]="favoriteColor">
+  <p>{{favoriteColor}}</p>
 
-
-
-
-
-  <h2>ng-group</h2>
-  <div>
-    <app-ng-group></app-ng-group>
-  </div>
+<pre>
+  1、通过断点，揭示数据流的变化
+  2、通过测试演示区别————模板表单需要触发changes事件
+</pre>
 </section>
 
 
