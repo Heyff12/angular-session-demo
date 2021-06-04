@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { DynamicComponent } from './dynamic-component/dynamic-component.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { PreloadStrategyService } from './preloading/services/preload-strategy.service';
@@ -43,7 +42,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DynamicComponent],
+  declarations: [],
   imports: [RouterModule.forRoot(routes)],
   // imports: [RouterModule.forRoot(routes, { preloadingStrategy:  PreloadAllModules })], // preloading all modules
   // imports: [RouterModule.forRoot(routes, { preloadingStrategy:  PreloadStrategyService })], // preloading specific modules
