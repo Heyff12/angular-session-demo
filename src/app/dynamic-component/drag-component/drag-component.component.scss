@@ -1,0 +1,36 @@
+
+.drag-container {
+  display: flex;
+}
+
+.drag-display-area {
+  flex: 1;
+  background-color: antiquewhite;
+  padding: 20px;
+}
+
+.operation-area {
+  width: 640px;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+}
+
+.btn {
+  outline: none;
+  width: 120px;
+  height: 32px;
+  line-height: 32px;
+  color: white;
+  background-color: #30a4de;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.input-index {
+  margin-right: 20px;
+}

@@ -1,0 +1,21 @@
+<div class="drag-container">
+  <div class="drag-display-area">
+    <ng-container  #containerRef>
+
+    </ng-container>
+  </div>
+  <form [formGroup]="formGroup">
+    <aside class="operation-area">
+
+      <div *ngFor="let data of config; let index=index">
+        <button class="btn" type="button" (click)="addComponent(data)">添加{{data.componentName}}组件</button>
+        <button class="btn" type="button" (click)="removeComponent(data.key)">移除{{data.componentName}}组件</button>
+        <div formArrayName="line">
+          <input type="number" class="input-index" [formControlName]="index" />
+          <button class="btn" type="button" (click)="moveComponent(data, index)">移动到输入的位置</button>
+        </div>
+      </div>
+    </aside>
+  </form>
+
+</div>

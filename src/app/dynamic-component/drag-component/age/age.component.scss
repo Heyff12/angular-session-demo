@@ -1,0 +1,33 @@
+.age-container {
+  display: flex;
+
+  label {
+    margin-right: 20px;
+  }
+}
+.age-content {
+  display: flex;
+  span {
+    width: 80px;
+    height: 32px;
+    line-height: 32px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border: 1px solid #30a4de;
+    border-right: none;
+    cursor: pointer;
+  }
+  span:first-child {
+    border-radius: 2px 0 0 2px;
+  }
+  span:last-child {
+    border-right: 1px solid #30a4de;
+    border-radius: 2px 0 0 2px;
+  }
+
+  .checked {
+    background-color: #30a4de;
+    color: white;
+  }
+}

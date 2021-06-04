@@ -1,0 +1,10 @@
+<div class="age-container">
+  <label>年龄：</label>
+  <div class="age-content">
+    <span *ngFor="let option of options"
+          [ngClass]="selectedOption === option.value && 'checked'"
+          (click)="handleClick(option.value)">
+      {{option.text}}
+    </span>
+  </div>
+</div>
