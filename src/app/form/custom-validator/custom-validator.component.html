@@ -22,5 +22,9 @@
     </p>
   </div>
 
+  <div *ngIf="errorMobile">
+    手机号格式不正确，当前输入：{{errorMobile.value}}
+  </div>
+
   <button (click)="submit()">提交</button>
 </form>

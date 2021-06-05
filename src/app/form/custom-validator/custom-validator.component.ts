@@ -9,8 +9,6 @@ import { validValidator } from './util';
 })
 export class CustomValidatorComponent implements OnInit {
 
-  // TODO 验证指令
-
   form = this.fb.group({
     publicInfo: this.fb.group({
       name: this.fb.control('', [Validators.required, validValidator(/^\w{3}$/, 'errorName')])
@@ -20,6 +18,8 @@ export class CustomValidatorComponent implements OnInit {
       mobile: '',
     })
   });
+
+  errorMobile = null;
 
   constructor(private fb: FormBuilder) { }
 
@@ -31,7 +31,8 @@ export class CustomValidatorComponent implements OnInit {
     console.log(this.form.value.privateInfo.idCard);
     console.log(this.form.value.privateInfo.mobile);
     console.log(this.form.status);
-    console.log(this.form);
+
+    this.errorMobile = this.form.get('privateInfo.mobile').errors?.errorMobile;
   }
 
 }
