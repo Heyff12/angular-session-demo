@@ -7,14 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomValidator2Component implements OnInit {
   testModel = '';
-  // mobile;
 
   ngOnInit(): void {
   }
 
   consoleLog(): void {
     console.log(this.testModel);
-    // console.log(this.mobile);
   }
 
 }
