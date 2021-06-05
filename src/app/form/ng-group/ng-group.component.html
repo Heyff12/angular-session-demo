@@ -2,7 +2,7 @@
   <h3>-公开信息-</h3>
   <p formGroupName="publicInfo">
     <label for="idCard">* 姓名：</label>
-    <input id="name" type="text" formControlName="name">
+    <input id="name" autocomplete="off" type="text" formControlName="name">
   </p>
 
   <br>
@@ -11,12 +11,12 @@
   <div formGroupName="privateInfo">
     <p>
       <label for="idCard">* 身份证：</label>
-      <input id="idCard" type="text" formControlName="idCard">
+      <input id="idCard" autocomplete="off" type="text" formControlName="idCard">
     </p>
 
     <p >
       <label for="mobile">手机号：</label>
-      <input id="mobile" type="number" formControlName="mobile">
+      <input id="mobile" autocomplete="off" type="number" formControlName="mobile">
     </p>
   </div>
 

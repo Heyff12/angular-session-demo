@@ -1,14 +1,16 @@
+<h1>验证器-模版驱动表单</h1>
+
 <p>
   <label for="mobile">手机号：</label>
-  <input id="mobile" type="number" required [(ngModel)]="testModel" appMobile #mobile="ngModel">
+  <input id="mobile" type="number" autocomplete="off" required [(ngModel)]="testModel" appMobile #result="ngModel">
   <button (click)="consoleLog()">输出</button>
 </p>
 
-<div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)">
-  <div *ngIf="mobile.errors.errorMobile">
+<div *ngIf="result.invalid && (result.dirty || result.touched)">
+  <div *ngIf="result.errors.errorMobile">
     手机号格式不正确
   </div>
-  <div *ngIf="mobile.errors.required">
+  <div *ngIf="result.errors.required">
     手机号必填
   </div>
 </div>
