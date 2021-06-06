@@ -31,7 +31,6 @@ describe('FormComponent', () => {
 
   it('should update the value of the input field', () => {
     const input = fixture.nativeElement.querySelector('.zishiying');
-    console.log(input)
     // const event = document.createEvent('input');
     const event = new Event('input', {
       bubbles: true,
@@ -40,7 +39,6 @@ describe('FormComponent', () => {
 
     input.value = 'Red';
     input.dispatchEvent(event);
-    console.log(input)
 
     expect(fixture.componentInstance.favoriteColorControl.value).toEqual('Red');
   });
