@@ -30,7 +30,7 @@ describe('FormComponent', () => {
   });
 
   it('should update the value of the input field', () => {
-    const input = fixture.nativeElement.querySelector('.zishiying');
+    const input = fixture.nativeElement.querySelector('.xiangyingshi');
     // const event = document.createEvent('input');
     const event = new Event('input', {
       bubbles: true,
@@ -46,7 +46,7 @@ describe('FormComponent', () => {
   it('should update the value in the control', () => {
     component.favoriteColorControl.setValue('Blue');
 
-    const input = fixture.nativeElement.querySelector('.zishiying');
+    const input = fixture.nativeElement.querySelector('.xiangyingshi');
 
     expect(input.value).toBe('Blue');
   });
