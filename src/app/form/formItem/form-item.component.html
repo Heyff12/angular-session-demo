@@ -1,1 +1,18 @@
-<p>form-item works!</p>
+<section>
+  <div [formGroup]="filterCondition" *ngFor="let item of filters">
+    <section>
+      <span>{{item.label}}</span>
+      <app-text-input
+        class="filter-input"
+        [formControlName]="item.name"
+        type="{{item.type}}"
+        maxLength="{{item.maxLength || 255}}"
+        placeholder="{{item.placeholder || '请输入...'}}">
+      </app-text-input>
+    </section>
+  </div>
+  <button type="button" [disabled]="!filterCondition.valid" (click)="onSubmit()">Save</button>
+  <div *ngIf="payLoad" class="form-row">
+    <strong>Saved the following values</strong><br>{{payLoad}}
+  </div>
+</section>

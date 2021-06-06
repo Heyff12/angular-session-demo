@@ -1,0 +1,23 @@
+<div>
+  <input
+    [value]="value"
+    [type]="type"
+    [attr.maxlength]="maxLength"
+    [placeholder]="placeholder"
+    class="form-control"
+    [disabled]="disabled"
+    [ngClass]="{ error: isError}"
+    (change)="setValue($event.target.value)"
+    (focus)="setFocused(true)"
+    (blur)="setFocused(false)"
+    #inputa
+  />
+  <p>
+    touched:  {{ngControl.touched}};
+    dirty:  {{ngControl.dirty}};
+    invalid:  {{ngControl.invalid}};
+  </p>
+  <p *ngIf="isError" class="error-message">
+    {{ngControl.errors.message}}
+  </p>
+</div>

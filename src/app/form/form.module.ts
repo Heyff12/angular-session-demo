@@ -12,6 +12,7 @@ import { CustomValidator2Component } from './custom-validator2/custom-validator2
 import { AppComponent } from './dynamic-form/app.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './dynamic-form/dynamic-form-question.component';
+import { TextInputComponent } from './components/text-input/text-input.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DynamicFormQuestionComponent } from './dynamic-form/dynamic-form-questi
     AppComponent,
     DynamicFormComponent,
     DynamicFormQuestionComponent,
+    TextInputComponent,
   ],
   imports: [
     CommonModule,

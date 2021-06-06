@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-item',
@@ -7,9 +8,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormItemComponent implements OnInit {
 
+  filterCondition: FormGroup;
+  filters = [
+    {
+      name: 'name',
+      label: '姓名',
+      placeholder: '请输入姓名',
+      maxLength: 8,
+      regs: [Validators.required]
+    },
+    {
+      type: 'number',
+      name: 'tel',
+      label: '电话',
+      placeholder: '请输入电话号码',
+      maxLength: 11,
+    },
+    {
+      name: 'address',
+      label: '地址'
+    }
+  ];
+  payLoad = '';
+
+
   constructor() { }
 
   ngOnInit(): void {
+    const group = {}
+    this.filters.map(filter=>{
+      group[filter.name]=new FormControl('', filter.regs || [])
+    })
+    this.filterCondition = new FormGroup(group);
+    console.log(this.filterCondition)
+  }
+
+  onSubmit(){
+    this.payLoad = JSON.stringify(this.filterCondition.getRawValue());
   }
 
 }
