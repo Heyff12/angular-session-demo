@@ -15,10 +15,9 @@ export class FormItemComponent implements OnInit {
       label: '姓名',
       placeholder: '请输入姓名',
       maxLength: 8,
-      regs: [Validators.required]
+      validator: [Validators.required],
     },
     {
-      type: 'number',
       name: 'tel',
       label: '电话',
       placeholder: '请输入电话号码',
@@ -26,7 +25,8 @@ export class FormItemComponent implements OnInit {
     },
     {
       name: 'address',
-      label: '地址'
+      label: '地址',
+      defaultValue: '成都'
     }
   ];
   payLoad = '';
@@ -36,9 +36,10 @@ export class FormItemComponent implements OnInit {
 
   ngOnInit(): void {
     const group = {}
-    this.filters.map(filter=>{
-      group[filter.name]=new FormControl('', filter.regs || [])
+    this.filters.forEach(filter=>{
+      group[filter.name]=new FormControl(filter.defaultValue || '', filter.validator || [])
     })
+    console.log(group)
     this.filterCondition = new FormGroup(group);
     console.log(this.filterCondition)
   }

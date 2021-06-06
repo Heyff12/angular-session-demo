@@ -39,7 +39,7 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
 
   @Output() onBlur: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  @ViewChild('inputa') inputa: ElementRef;
+  @ViewChild('inputdom') inputdom: ElementRef;
 
   value: string = '';
   focused = false;
@@ -69,6 +69,11 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
     this.ngControl = this.injector.get(NgControl) as FormControlName;
   }
 
+  NgAfterViewInit(){
+    // console.log('-----------NgAfterViewInit-------------')
+    console.log(this.inputdom)
+  }
+
   setValue(value) {
     console.log(value)
     this.value = value;
@@ -84,26 +89,24 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
   }
 
   registerOnChange(fn: any): void {
-    console.log('-----------registerOnChange-------------')
+    // console.log('-----------registerOnChange-------------')
     this.onChange = fn;
   }
 
   registerOnTouched(fn: any): void {
-    console.log('-----------registerOnTouched-------------')
+    // console.log('-----------registerOnTouched-------------')
     this.onFocus = fn;
   }
 
   setDisabledState(isDisabled: boolean): void {
-    console.log('-----------setDisabledState-------------')
-
+    console.log('-----------setDisabledState-------------',isDisabled)
     this.disabled = isDisabled;
   }
 
   writeValue(obj: any): void {
-    console.log('-----------writeValue-------------')
-    console.log(this.inputa)
-
-    this.inputa.nativeElement.value = obj;
+    console.log('-----------writeValue-------------',obj)
+    // console.log(this.inputdom)
+    // this.inputdom.nativeElement.value = obj;
     this.setValue(obj);
   }
 }

@@ -10,12 +10,12 @@
     (change)="setValue($event.target.value)"
     (focus)="setFocused(true)"
     (blur)="setFocused(false)"
-    #inputa
+    #inputdom
   />
   <p>
     touched:  {{ngControl.touched}};
     dirty:  {{ngControl.dirty}};
-    invalid:  {{ngControl.invalid}};
+    valid:  {{ngControl.valid}};
   </p>
   <p *ngIf="isError" class="error-message">
     {{ngControl.errors.message}}
