@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-
+import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormComponent } from './form.component';
+
+TestBed.initTestEnvironment(
+  BrowserDynamicTestingModule, platformBrowserDynamicTesting()
+);
 
 describe('FormComponent', () => {
   let component: FormComponent;
@@ -8,7 +13,8 @@ describe('FormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormComponent ]
+      declarations: [ FormComponent ],
+      imports: [FormsModule,ReactiveFormsModule]
     })
     .compileComponents();
   });
@@ -25,10 +31,16 @@ describe('FormComponent', () => {
 
   it('should update the value of the input field', () => {
     const input = fixture.nativeElement.querySelector('.zishiying');
-    const event = createNewEvent('input');
+    console.log(input)
+    // const event = document.createEvent('input');
+    const event = new Event('input', {
+      bubbles: true,
+      cancelable: true,
+    });
 
     input.value = 'Red';
     input.dispatchEvent(event);
+    console.log(input)
 
     expect(fixture.componentInstance.favoriteColorControl.value).toEqual('Red');
   });
@@ -43,7 +55,11 @@ describe('FormComponent', () => {
 
   it('should update the favorite color in the component', fakeAsync(() => {
     const input = fixture.nativeElement.querySelector('.muban');
-    const event = createNewEvent('input');
+    // const event = createNewEvent('input');
+    const event = new Event('input', {
+      bubbles: true,
+      cancelable: true,
+    });
 
     input.value = 'Red';
     input.dispatchEvent(event);
@@ -67,7 +83,7 @@ describe('FormComponent', () => {
 });
 
 
-function createNewEvent(arg0: string) {
-  throw new Error('Function not implemented.');
-}
+// function createNewEvent(arg0: string) {
+//   throw new Error('Function not implemented.');
+// }
 

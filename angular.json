@@ -84,6 +84,28 @@
           }
         },
         "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "configPath": "jest/jest.config.js",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "scripts": [],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
+            ],
+            "codeCoverageExclude": [
+              "src/main.ts",
+              "src/jest/*.ts",
+              "src/polyfills.ts"
+            ],
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ]
+          }
+        },
+        "testKarma": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",

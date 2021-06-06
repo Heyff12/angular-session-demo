@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   selector: 'app-root',
   template: `
     <div>
-      <h2>Job Application for Heroes</h2>
+      <h2>动态表单</h2>
       <app-dynamic-form [questions]="questions$ | async"></app-dynamic-form>
     </div>
   `,
