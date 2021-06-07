@@ -31,7 +31,6 @@ describe('FormComponent', () => {
 
   it('should update the value of the input field', () => {
     const input = fixture.nativeElement.querySelector('.xiangyingshi');
-    // const event = document.createEvent('input');
     const event = new Event('input', {
       bubbles: true,
       cancelable: true,
@@ -53,7 +52,6 @@ describe('FormComponent', () => {
 
   it('should update the favorite color in the component', fakeAsync(() => {
     const input = fixture.nativeElement.querySelector('.muban');
-    // const event = createNewEvent('input');
     const event = new Event('input', {
       bubbles: true,
       cancelable: true,
@@ -81,7 +79,5 @@ describe('FormComponent', () => {
 });
 
 
-// function createNewEvent(arg0: string) {
-//   throw new Error('Function not implemented.');
-// }
+
 

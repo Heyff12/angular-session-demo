@@ -39,7 +39,6 @@ export class FormItemComponent implements OnInit {
     this.filters.forEach(filter=>{
       group[filter.name]=new FormControl(filter.defaultValue || '', filter.validator || [])
     })
-    console.log(group)
     this.filterCondition = new FormGroup(group);
     console.log(this.filterCondition)
   }
