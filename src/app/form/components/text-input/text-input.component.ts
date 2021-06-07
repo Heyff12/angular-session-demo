@@ -52,8 +52,6 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
     this.onBlur.emit(event);
   }
 
-  // Only used in parts-purchase-purchase-order-detail-table-cell.component.html
-  // Keypress instead of keyup to catch default behaviour
   @Output() onKeyPressed: EventEmitter<KeyboardEvent> = new EventEmitter<KeyboardEvent>();
   @HostListener('keypress', ['$event']) protected keypress(event: KeyboardEvent) {
     this.onKeyPressed.emit(event);
@@ -67,11 +65,6 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
 
   ngOnInit(): void {
     this.ngControl = this.injector.get(NgControl) as FormControlName;
-  }
-
-  NgAfterViewInit(){
-    // console.log('-----------NgAfterViewInit-------------')
-    console.log(this.inputdom)
   }
 
   setValue(value) {
@@ -89,12 +82,14 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
   }
 
   registerOnChange(fn: any): void {
-    // console.log('-----------registerOnChange-------------')
+    console.log('-----------registerOnChange-------------')
+    console.log(fn)
     this.onChange = fn;
   }
 
   registerOnTouched(fn: any): void {
-    // console.log('-----------registerOnTouched-------------')
+    console.log('-----------registerOnTouched-------------')
+    console.log(fn)
     this.onFocus = fn;
   }
 
@@ -105,8 +100,6 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
 
   writeValue(obj: any): void {
     console.log('-----------writeValue-------------',obj)
-    // console.log(this.inputdom)
-    // this.inputdom.nativeElement.value = obj;
     this.setValue(obj);
   }
 }
