@@ -47,4 +47,20 @@ export class FormItemComponent implements OnInit {
     this.payLoad = JSON.stringify(this.filterCondition.getRawValue());
   }
 
+  onFixed(){
+    this.filterCondition.patchValue({
+      name:'张三',
+      tel:'12345678900',
+      address:'成都高新',
+    })
+  }
+
+  onDisable(){
+    if(this.filterCondition.disabled){
+      this.filterCondition.enable()
+    }else{
+      this.filterCondition.disable()
+    }
+  }
+
 }
