@@ -14,7 +14,7 @@ describe('FormComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ FormComponent ],
-      imports: [FormsModule,ReactiveFormsModule]
+      imports: [FormsModule, ReactiveFormsModule]
     })
     .compileComponents();
   });
@@ -29,53 +29,57 @@ describe('FormComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should update the value of the input field', () => {
-    const input = fixture.nativeElement.querySelector('.xiangyingshi');
-    const event = new Event('input', {
-      bubbles: true,
-      cancelable: true,
+  describe('data-flow: reactive-form', () => {
+    it('dom -> data', () => {
+      const input = fixture.nativeElement.querySelector('.xiangyingshi');
+      const event = new Event('input', {
+        bubbles: true,
+        cancelable: true,
+      });
+
+      input.value = 'Red';
+      input.dispatchEvent(event);
+
+      expect(fixture.componentInstance.favoriteColorControl.value).toEqual('Red');
     });
 
-    input.value = 'Red';
-    input.dispatchEvent(event);
+    it('data -> dom', () => {
+      component.favoriteColorControl.setValue('Blue');
 
-    expect(fixture.componentInstance.favoriteColorControl.value).toEqual('Red');
-  });
+      const input = fixture.nativeElement.querySelector('.xiangyingshi');
 
-  it('should update the value in the control', () => {
-    component.favoriteColorControl.setValue('Blue');
-
-    const input = fixture.nativeElement.querySelector('.xiangyingshi');
-
-    expect(input.value).toBe('Blue');
-  });
-
-  it('should update the favorite color in the component', fakeAsync(() => {
-    const input = fixture.nativeElement.querySelector('.muban');
-    const event = new Event('input', {
-      bubbles: true,
-      cancelable: true,
+      expect(input.value).toBe('Blue');
     });
+  });
 
-    input.value = 'Red';
-    input.dispatchEvent(event);
+  describe('data-flow: template-driven-form', () => {
+    it('dom -> data', fakeAsync(() => {
+      const input = fixture.nativeElement.querySelector('.muban');
+      const event = new Event('input', {
+        bubbles: true,
+        cancelable: true,
+      });
 
-    fixture.detectChanges();
+      input.value = 'Red';
+      input.dispatchEvent(event);
 
-    expect(component.favoriteColor).toEqual('Red');
-  }));
+      fixture.detectChanges();
 
-  it('should update the favorite color on the input field', fakeAsync(() => {
-    component.favoriteColor = 'Blue';
+      expect(component.favoriteColor).toEqual('Red');
+    }));
 
-    fixture.detectChanges();
+    it('data -> dom', fakeAsync(() => {
+      component.favoriteColor = 'Blue';
 
-    tick();
+      fixture.detectChanges();
 
-    const input = fixture.nativeElement.querySelector('.muban');
+      tick();
 
-    expect(input.value).toBe('Blue');
-  }));
+      const input = fixture.nativeElement.querySelector('.muban');
+
+      expect(input.value).toBe('Blue');
+    }));
+  });
 });
 
 
