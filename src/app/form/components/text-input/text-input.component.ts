@@ -71,6 +71,9 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
     console.log(value)
     this.value = value;
     this.onChange(value);
+    if(this.inputdom){
+      console.log(this.inputdom.nativeElement.value)
+    }
   }
 
   setFocused(focused) {
