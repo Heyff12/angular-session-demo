@@ -1,0 +1,68 @@
+.game-body {
+  width: 860px;
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-end;
+  border: #080808 solid 1px;
+
+  .start {
+    display: flex;
+    flex: 1;
+    padding-left: 326px;
+    padding-right: 326px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 200px;
+  }
+
+  .start-fight {
+    display: flex;
+    flex: 1;
+    padding-bottom: 300px;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .intro {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    border-top: #080808 solid 1px;
+
+  }
+
+  .boss-fight {
+    display: flex;
+    flex-direction: row;
+
+    .yuusya {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      width: 430px;
+      height: 609px;
+      border-right: #080808 solid 1px;
+      border-top: #080808 solid 1px;
+    }
+
+    .maou {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      width: 429px;
+      height: 609px;
+      border-top: #080808 solid 1px;
+    }
+    .hp{
+      background-color: red;
+      height: 15px;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+<div class="game-body">
+
+  <div class="start" *ngIf="!isStart">
+    <h1 style="margin-bottom: 200px;">勇者👨‍与魔王😈</h1>
+    <button (click)="start()">开始游戏</button>
+  </div>
+
+  <div *ngIf="isStart && !startFight">
+    <div class="start-fight">
+      <button *ngIf="scriptEnd()" (click)="startBoss()">打败魔王</button>
+    </div>
+    <div class="intro">
+      <p>{{introText}}</p>
+      <div>
+        <button (click)="nextText()" [disabled]="scriptEnd()">下一步</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="startFight" style="display: flex; flex-direction: column;">
+    <div>当前回合：{{round}}</div>
+
+    <div class="boss-fight">
+
+      <div class="yuusya">
+        <h1>👨‍🦱</h1>
+        <div>
+          HP: {{yuusya.hp}}
+          <div class="hp" [style.width.px]="yuusya.hp"></div>
+        </div>
+        <div>攻击：{{yuusya.atk}}</div>
+        <div>防御：{{yuusya.def}}</div>
+        <div>速度：{{yuusya.agi}}</div>
+        <br/>
+        <div>战斗信息：<br/> {{yuusya.info}}</div>
+      </div>
+      <div class="maou">
+        <h1>😈</h1>
+        <div>
+          HP: {{maou.hp}}
+          <div class="hp" [style.width.px]="maou.hp"></div>
+        </div>
+        <div>攻击：{{maou.atk}}</div>
+        <div>防御：{{maou.def}}</div>
+        <div>速度：{{maou.agi}}</div>
+        <br/>
+        <div>战斗信息：<br/>{{maou.info}}</div>
+      </div>
+    </div>
+  </div>
+</div>

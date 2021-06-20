@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './form/template-driven-form/template-driven-form.component';
 import { FormModule } from './form/form.module';
 import { SharedModule } from './shared/shared.module';
+import { RxjsDemoModule } from './rxjs-demo/rxjs-demo.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SharedModule } from './shared/shared.module';
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
+    RxjsDemoModule,
     SharedModule.forRoot(),
     FormModule
   ],

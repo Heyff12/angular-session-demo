@@ -1,0 +1,10 @@
+<div style="border: black solid 1px; width: 800px;">
+  <div style="display: flex;flex-direction: column; padding: 10px;">
+    <app-mission-info [totalCount]="5"></app-mission-info>
+    <div style="display: flex; flex-direction: row; justify-content: space-around;">
+      <app-wolf-man *ngFor="let wm of wolfMan" [wolfMan]="wm"></app-wolf-man>
+    </div>
+    <app-bag></app-bag>
+    <app-ex-info></app-ex-info>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div>
+  <p>好友列表:</p>
+  <div>
+    搜索：
+    <input type="text" [(ngModel)]="filterText" (change)="nameChange($event.target.value)">
+  </div>
+  <div>
+    职业：
+    <select (change)="characterChange($event.target.value)">
+      <option *ngFor="let character of characters">{{character}}</option>
+    </select>
+  </div>
+  <div>
+    工会：
+    <select (change)="unionChange($event.target.value)">
+      <option *ngFor="let union of unions">{{union}}</option>
+    </select>
+  </div>
+  <div>
+    <button (click)="favChange()">特别关心</button>
+    <button (click)="favCancel()">取消</button>
+  </div>
+  <ul>
+    <li *ngFor="let friend of (filtered$|async)" style="margin-bottom: 10px;">
+      {{friend.name}}
+      <span
+        style="background-color: #FFC0CB; color: white; border-radius: 3px; margin: 5px; padding: 2px;">{{friend.character}}</span>
+      <span
+        style="background-color: #FF8C00; color: white; border-radius: 3px; margin: 5px; padding: 2px;">{{friend.union}}</span>
+      <span *ngIf="friend.fav">♥️</span>
+    </li>
+  </ul>
+</div>

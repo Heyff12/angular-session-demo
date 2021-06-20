@@ -32,6 +32,10 @@ const routes: Routes = [
     data: { preload: true }
   },
   {
+    path: 'rxjs-demo',
+    loadChildren: () => import('./rxjs-demo/rxjs-demo.module').then(m => m.RxjsDemoModule),
+  },
+  {
     path: 'to-do-list',
     component: ToDoListComponent
   },
