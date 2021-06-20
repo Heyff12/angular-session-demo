@@ -14,6 +14,7 @@ import { TemplateDrivenFormComponent } from './form/template-driven-form/templat
 import { FormModule } from './form/form.module';
 import { SharedModule } from './shared/shared.module';
 import { RxjsDemoModule } from './rxjs-demo/rxjs-demo.module';
+import { PerformanceModule } from './performance/performance.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RxjsDemoModule } from './rxjs-demo/rxjs-demo.module';
     FormsModule,
     RxjsDemoModule,
     SharedModule.forRoot(),
-    FormModule
+    FormModule,
+    PerformanceModule,
   ],
   exports: [],
   providers: [
