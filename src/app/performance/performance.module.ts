@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { GenderPipe } from './pipe/gender.pipe';
 import { HeroComponent } from './pipe/hero.component';
 import { CountComponent } from './changeDetection/count.component';
+import { DataComponent } from './onPush/data.component';
+import { ListComponent } from './onPush/list.component';
 
 const routes: Routes = [
   {
@@ -14,7 +16,7 @@ const routes: Routes = [
     component: PerformanceComponent,
   },
   {
-    path: 'zone',
+    path: 'zone-js',
     component: ZoneComponent,
   },
   {
@@ -22,8 +24,12 @@ const routes: Routes = [
     component: CountComponent,
   },
   {
-    path: 'hero',
+    path: 'pipe',
     component: HeroComponent,
+  },
+  {
+    path: 'on-push',
+    component: DataComponent,
   },
 ];
 
@@ -33,7 +39,9 @@ const routes: Routes = [
     ZoneComponent,
     GenderPipe,
     CountComponent,
-    HeroComponent
+    HeroComponent,
+    DataComponent,
+    ListComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
 })
