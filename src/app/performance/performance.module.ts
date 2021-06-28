@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { GenderPipe } from './pipe/gender.pipe';
 import { HeroComponent } from './pipe/hero.component';
+import { CountComponent } from './changeDetection/count.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'zone',
     component: ZoneComponent,
+  },
+  {
+    path: 'change-detection',
+    component: CountComponent,
   },
   {
     path: 'hero',
@@ -27,6 +32,7 @@ const routes: Routes = [
     PerformanceComponent,
     ZoneComponent,
     GenderPipe,
+    CountComponent,
     HeroComponent
   ],
   imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
