@@ -9,6 +9,7 @@ import { HeroComponent } from './pipe/hero.component';
 import { CountComponent } from './change-detection/count.component';
 import { DataComponent } from './on-push/data.component';
 import { ListComponent } from './on-push/list.component';
+import { SlowResponseComponent } from './slow-response/slow-response.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
     path: 'on-push',
     component: DataComponent,
   },
+  {
+    path: 'slow-response',
+    component: SlowResponseComponent,
+  },
 ];
 
 @NgModule({
@@ -42,6 +47,7 @@ const routes: Routes = [
     HeroComponent,
     DataComponent,
     ListComponent,
+    SlowResponseComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
 })
