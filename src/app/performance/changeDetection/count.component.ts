@@ -19,7 +19,7 @@ export class CountComponent {
   //   this.count++;
   //
   //   // 在以下代码执行完毕之前DOM不会发生更新
-  //   for (let i = 0; i < 100000; i++) {
+  //   for (let i = 0; i < 1000000; i++) {
   //     console.log(i);
   //   }
   // }
