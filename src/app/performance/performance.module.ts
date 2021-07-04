@@ -6,9 +6,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { GenderPipe } from './pipe/gender.pipe';
 import { HeroComponent } from './pipe/hero.component';
-import { CountComponent } from './changeDetection/count.component';
-import { DataComponent } from './onPush/data.component';
-import { ListComponent } from './onPush/list.component';
+import { CountComponent } from './change-detection/count.component';
+import { DataComponent } from './on-push/data.component';
+import { ListComponent } from './on-push/list.component';
 
 const routes: Routes = [
   {
