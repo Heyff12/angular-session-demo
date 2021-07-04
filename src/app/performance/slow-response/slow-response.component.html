@@ -1,3 +1,18 @@
 <div>
-  响应很慢实例
+  <table class="persons">
+    <tr>
+      <th (click)='sortBy("name")'>Name<span class="sort-icon">↕</span></th>
+      <th (click)='sortBy("age")'>Age<span class="sort-icon">↕</span></th>
+      <th (click)='sortBy("sex")'>sex<span class="sort-icon">↕</span></th>
+      <th (click)='sortBy("birthday")'>birthday<span class="sort-icon">↕</span></th>
+      <th (click)='sortBy("telephone")'>telephone<span class="sort-icon">↕</span></th>
+    </tr>
+    <tr *ngFor="let person of persons">
+      <td>{{person.name}}</td>
+      <td>{{person.age}}</td>
+      <td>{{getSexName(person.sex)}}</td>
+      <td>{{formatDate(person.birthday)}}</td>
+      <td>{{formatTelephone(person.telephone)}}</td>
+    </tr>
+  </table>
 </div>

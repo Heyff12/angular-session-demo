@@ -10,6 +10,7 @@ import { CountComponent } from './change-detection/count.component';
 import { DataComponent } from './on-push/data.component';
 import { ListComponent } from './on-push/list.component';
 import { SlowResponseComponent } from './slow-response/slow-response.component';
+import { DataService } from './slow-response/data.service';
 
 const routes: Routes = [
   {
@@ -49,6 +50,7 @@ const routes: Routes = [
     ListComponent,
     SlowResponseComponent,
   ],
+  providers: [DataService],
   imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
 })
 export class PerformanceModule {}
