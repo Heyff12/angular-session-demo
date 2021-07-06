@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { DataService, Person } from './data.service';
 import * as _ from 'lodash';
 
+const sleep = (ms) => {
+  const start = new Date().getTime();
+  while (new Date().getTime() < start + ms) {
+    // 等待
+  }
+};
+
 @Component({
   selector: 'app-slow-response-component',
   templateUrl: 'slow-response.component.html',
@@ -38,7 +45,7 @@ export class SlowResponseComponent implements OnInit {
     const minutes = date.getMinutes();
     const seconds = date.getSeconds();
 
-    // this.runComplexLogic();
+    this.runComplexLogic();
 
     return `${date.getFullYear()}-${month < 10 ? '0' + month : month}-${days < 10 ? '0' + days : days} ${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
   }
@@ -51,9 +58,7 @@ export class SlowResponseComponent implements OnInit {
   }
 
   runComplexLogic(): void {
-    for (let i = 0; i < 2; i++) {
-      console.log(i);
-    }
+    sleep(1);
   }
 }
 
