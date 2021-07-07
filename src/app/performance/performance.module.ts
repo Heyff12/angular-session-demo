@@ -9,8 +9,11 @@ import { HeroComponent } from './pipe/hero.component';
 import { CountComponent } from './change-detection/count.component';
 import { DataComponent } from './on-push/data.component';
 import { OnPushComponent } from './on-push/on-push.component';
-import { SlowResponseComponent } from './slow-response/slow-response.component';
-import { DataService } from './slow-response/data.service';
+import { TemplateComponent } from './template/template.component';
+import { DataService } from './template/data.service';
+import { SexPipe } from './template/pipe/sex.pipe';
+import { FormatTelephonePipe } from './template/pipe/formatTelephone.pipe';
+import { FormatDatePipe } from './template/pipe/formatDate.pipe';
 
 const routes: Routes = [
   {
@@ -34,8 +37,8 @@ const routes: Routes = [
     component: DataComponent,
   },
   {
-    path: 'slow-response',
-    component: SlowResponseComponent,
+    path: 'template',
+    component: TemplateComponent,
   },
 ];
 
@@ -48,7 +51,10 @@ const routes: Routes = [
     HeroComponent,
     DataComponent,
     OnPushComponent,
-    SlowResponseComponent,
+    TemplateComponent,
+    SexPipe,
+    FormatDatePipe,
+    FormatTelephonePipe,
   ],
   providers: [DataService],
   imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
