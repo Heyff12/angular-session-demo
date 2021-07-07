@@ -33,12 +33,12 @@ export class HeroComponent implements OnInit {
     ];
   }
 
-  // getGender(value: string): string {
-  //   console.log('getGender:', value);
-  //   if (value === 'M') { return '男'; }
-  //   if (value === 'W') { return  '女'; }
-  //   return '';
-  // }
+  getGender(value: string): string {
+    console.log('getGender:', value);
+    if (value === 'M') { return '男'; }
+    if (value === 'W') { return  '女'; }
+    return '';
+  }
 }
 
 

@@ -1,5 +1,6 @@
 <ul>
   <li *ngFor="let hero of heroes">
     {{ hero.name }} {{ hero.genderCode | gender }}
+<!--    {{ hero.name }} {{ getGender(hero.genderCode)  }}-->
   </li>
 </ul>

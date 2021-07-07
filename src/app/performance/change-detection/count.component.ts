@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { wait } from '../../utils/sleep';
 
 @Component({
   selector: 'app-count-component',
@@ -18,10 +19,12 @@ export class CountComponent {
   // update(): void {
   //   this.count++;
   //
-  //   // 在以下代码执行完毕之前DOM不会发生更新
-  //   for (let i = 0; i < 1000000; i++) {
-  //     console.log(i);
-  //   }
+  //   // 等待 2s
+  //   wait(2000);
+  //
+  //   console.log('event handle end');
+  //
+  //   // 一次点击事件完成之后，才会触发变更检查
   // }
 
   // update(): void {
@@ -29,6 +32,7 @@ export class CountComponent {
   //
   //   // setTimeout 将触发变更检测
   //   setTimeout(() => {
+  //     console.log('setTimeout');
   //     this.count++;
   //   }, 2000);
   // }
