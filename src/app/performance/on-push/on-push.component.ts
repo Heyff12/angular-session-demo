@@ -1,15 +1,16 @@
 import { ChangeDetectionStrategy, Component, Input, } from '@angular/core';
 
 @Component({
-  selector: 'app-list-component',
+  selector: 'app-on-push-component',
   template: `
     <button (click)='addTwoNumbers()'>add two numbers</button>
-    <div>nums:</div>
-    <div *ngFor='let num of nums'>{{num}}</div>
+    <button style="margin-left: 20px;" (click)='onClick()'>click</button>
+    <p></p>
+    <div>data: {{nums.toString()}}</div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ListComponent {
+export class OnPushComponent {
   @Input() nums: number[];
 
   add(): void {
@@ -28,6 +29,10 @@ export class ListComponent {
     setTimeout(() => {
       this.add();
     });
+  }
+
+  onClick(): void {
+    // 触发当前组件的变更检测
   }
 }
 

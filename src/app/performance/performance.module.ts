@@ -8,7 +8,7 @@ import { GenderPipe } from './pipe/gender.pipe';
 import { HeroComponent } from './pipe/hero.component';
 import { CountComponent } from './change-detection/count.component';
 import { DataComponent } from './on-push/data.component';
-import { ListComponent } from './on-push/list.component';
+import { OnPushComponent } from './on-push/on-push.component';
 import { SlowResponseComponent } from './slow-response/slow-response.component';
 import { DataService } from './slow-response/data.service';
 
@@ -47,7 +47,7 @@ const routes: Routes = [
     CountComponent,
     HeroComponent,
     DataComponent,
-    ListComponent,
+    OnPushComponent,
     SlowResponseComponent,
   ],
   providers: [DataService],

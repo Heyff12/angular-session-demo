@@ -1,13 +1,18 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-data-component',
   template: `
     <div>=========== DataComponent ===========</div>
-    <button (click)='add()'>add</button>
-    <div>nums: {{nums.toString()}}</div>
-    <div>=========== ListComponent ===========</div>
-    <app-list-component [nums]='nums'></app-list-component>
+    <br />
+    <button (click)='add()'>add one number</button>
+    <button style="margin-left: 20px;" (click)='onClick()'>click</button>
+    <p></p>
+    <div>data: {{nums.toString()}}</div>
+    <br />
+    <div>=========== OnPushComponent ===========</div>
+    <br />
+    <app-on-push-component [nums]='nums'></app-on-push-component>
   `,
 })
 export class DataComponent {
@@ -20,6 +25,10 @@ export class DataComponent {
     } else {
       this.nums = [...this.nums, 1];
     }
+  }
+
+  onClick(): void {
+    // 触发当前组件的变更检测
   }
 }
 
